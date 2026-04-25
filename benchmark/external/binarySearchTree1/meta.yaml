@@ -1,0 +1,8 @@
+name: binarySearchTree1
+source: aurimrv/python_experiments
+axis: stateful
+complexity: textbook
+loc: <count it>
+baseline_pytest_score: 0.7251
+baseline_total_mutants: 211
+baseline_surviving: 153

@@ -1,0 +1,22 @@
+project;filename;mutants;killed_output;killed_timeout;total_killed;survived;mutation score
+binarySearchTree1;binarySearchTree1.py;211;169;0;169;42;80.09
+binarySearchTree2;binarySearchTree2.py;214;156;0;156;58;72.90
+binarySearchTree3;binarySearchTree3.py;291;221;0;221;70;75.95
+binarySearchTree4;binarySearchTree4.py;18;18;0;18;0;100.00
+identifier1;identifier1.py;140;121;1;122;18;87.14
+linkedList1;linkedList1.py;146;106;0;106;40;72.60
+linkedList2;linkedList2.py;44;39;0;39;5;88.64
+linkedList3;linkedList3.py;54;31;7;38;16;70.37
+linkedList4;linkedList4.py;72;65;0;65;7;90.28
+linkedList5;linkedList5.py;74;69;0;69;5;93.24
+queue1;queue1.py;14;14;0;14;0;100.00
+queue2;queue2.py;62;53;0;53;9;85.48
+queue3;queue3.py;91;73;0;73;18;80.22
+queue4;queue4.py;112;96;0;96;16;85.71
+queue5;queue5.py;16;13;0;13;3;81.25
+sort1;sort1.py;185;75;9;84;101;45.41
+stack1;stack1.py;114;40;0;40;74;35.09
+stack2;stack2.py;19;18;0;18;1;94.74
+stack3;stack3.py;70;41;8;49;21;70.00
+stack4;stack4.py;72;61;0;61;11;84.72
+stack5;stack5.py;5;4;0;4;1;80.00

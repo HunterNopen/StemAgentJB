@@ -1,0 +1,8 @@
+name: linkedList1
+source: aurimrv/python_experiments
+axis: stateful
+complexity: textbook
+loc: <count it>
+baseline_pytest_score: 0.3699
+baseline_total_mutants: 146
+baseline_surviving: 54
