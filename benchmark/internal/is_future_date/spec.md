@@ -1,5 +1,10 @@
 # is_future_date
 
+## Dependencies
+This function imports `validate_date` from the same module. Tests should
+import only `is_future_date` from `source` — do not assume access to
+`validate_date` directly in tests.
+
 ## Signature
 `is_future_date(date_str: str, current_date_str: str) -> bool`
 

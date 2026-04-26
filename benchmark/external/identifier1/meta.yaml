@@ -2,7 +2,9 @@ name: identifier1
 source: aurimrv/python_experiments
 axis: stateful
 complexity: textbook
-loc: <count it>
+loc: 36
+expected_difficulty: easy
+notes: "Class-based identifier validator with character-class and length constraints."
 baseline_pytest_score: 0.1286
 baseline_total_mutants: 140
 baseline_surviving: 18

@@ -2,7 +2,9 @@ name: stack1
 source: aurimrv/python_experiments
 axis: stateful
 complexity: textbook
-loc: <count it>
+loc: 108
+expected_difficulty: medium
+notes: "Linked-node stack plus bracket matcher and postfix expression evaluator."
 baseline_pytest_score: 0.3684
 baseline_total_mutants: 114
 baseline_surviving: 42

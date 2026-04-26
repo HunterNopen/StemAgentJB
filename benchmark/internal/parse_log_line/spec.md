@@ -30,6 +30,12 @@ Parses a log line into a dictionary with keys `datetime`, `level`, and `message`
   - `level`: parsed level token
   - `message`: joined message text
 
+## Concrete examples
+- `parse_log_line("[2024-01-15 10:30:45] INFO: User logged in")` → 
+    `{"timestamp": "2024-01-15 10:30:45", "level": "INFO", "message": "User logged in"}`
+- `parse_log_line("malformed")` → `None`
+- `parse_log_line("")` → `None`
+
 ## Edge cases
 - `""` → `None`
 - `"2024-01-05 12:10 INFO"` → `None` (missing message token)

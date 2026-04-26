@@ -2,7 +2,9 @@ name: sort1
 source: aurimrv/python_experiments
 axis: stateful
 complexity: textbook
-loc: <count it>
+loc: 87
+expected_difficulty: medium
+notes: "Collection of sorting algorithms: selection, insertion, merge, and quick sort helpers."
 baseline_pytest_score: 0.4243
 baseline_total_mutants: 185
 baseline_surviving: 77

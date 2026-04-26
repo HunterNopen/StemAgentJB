@@ -2,7 +2,9 @@ name: queue1
 source: aurimrv/python_experiments
 axis: stateful
 complexity: textbook
-loc: <count it>
+loc: 44
+expected_difficulty: easy
+notes: "Linked-node FIFO queue with enqueue/dequeue/peek/clear semantics."
 baseline_pytest_score: 0.92
 baseline_total_mutants: 14
 baseline_surviving: 12
