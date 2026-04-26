@@ -1,0 +1,8 @@
+name: transition_account_state
+source: handwritten
+axis: pure
+complexity: medium
+loc: 39
+branches: 13
+expected_difficulty: medium
+notes: "Account lifecycle state machine with automatic lock and manual transitions. Pure function, no I/O."

@@ -1,0 +1,8 @@
+name: is_future_date
+source: handwritten
+axis: pure
+complexity: simple
+loc: 17
+branches: 4
+expected_difficulty: easy
+notes: "Date comparison with upstream date-validation dependency. Pure function, no I/O."

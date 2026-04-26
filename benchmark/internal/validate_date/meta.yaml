@@ -1,0 +1,8 @@
+name: validate_date
+source: handwritten
+axis: pure
+complexity: simple
+loc: 35
+branches: 8
+expected_difficulty: easy
+notes: "Calendar logic with leap-year rule. Pure function, no I/O."

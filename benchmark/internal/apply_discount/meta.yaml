@@ -1,0 +1,8 @@
+name: apply_discount
+source: handwritten
+axis: pure
+complexity: simple
+loc: 13
+branches: 6
+expected_difficulty: easy
+notes: "Numeric validation and percentage discount calculation with rounding. Pure function, no I/O."

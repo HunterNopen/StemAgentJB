@@ -1,0 +1,8 @@
+name: parse_user_id_from_string
+source: handwritten
+axis: pure
+complexity: medium
+loc: 38
+branches: 11
+expected_difficulty: medium
+notes: "Pattern-based identifier extraction with explicit precedence and digit fallback. Pure function, no I/O."

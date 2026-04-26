@@ -1,0 +1,8 @@
+name: parse_log_line
+source: handwritten
+axis: pure
+complexity: simple
+loc: 39
+branches: 8
+expected_difficulty: easy
+notes: "Parses structured log lines and validates time components. Pure function, no I/O."

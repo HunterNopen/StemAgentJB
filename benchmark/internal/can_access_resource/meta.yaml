@@ -1,0 +1,8 @@
+name: can_access_resource
+source: handwritten
+axis: pure
+complexity: medium
+loc: 37
+branches: 12
+expected_difficulty: medium
+notes: "Permission decision tree using role, ownership, and group overlap checks. Pure function, no I/O."

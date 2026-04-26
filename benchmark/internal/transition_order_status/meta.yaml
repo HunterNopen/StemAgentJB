@@ -1,0 +1,8 @@
+name: transition_order_status
+source: handwritten
+axis: pure
+complexity: medium
+loc: 39
+branches: 14
+expected_difficulty: medium
+notes: "Order workflow state machine with guarded transitions and terminal states. Pure function, no I/O."

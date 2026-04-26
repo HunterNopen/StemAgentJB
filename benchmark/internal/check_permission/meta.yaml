@@ -1,0 +1,8 @@
+name: check_permission
+source: handwritten
+axis: pure
+complexity: simple
+loc: 20
+branches: 7
+expected_difficulty: easy
+notes: "Role-based access check with explicit permission matrix. Pure function, no I/O."
