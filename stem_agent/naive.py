@@ -2,19 +2,18 @@ from __future__ import annotations
 import os
 import csv
 import ast
-import re
 import shutil
 import subprocess
 import time
-from dataclasses import dataclass, asdict
+from dataclasses import asdict
 from pathlib import Path
 from typing import Optional
 
 import yaml
 from openai import OpenAI
 
-from static import NAIVE_SYSTEM, NAIVE_USER_TEMPLATE, PYTEST_RESULT_RE
-from RunResult import RunResult
+from .static import NAIVE_SYSTEM, NAIVE_USER_TEMPLATE, PYTEST_RESULT_RE
+from .RunResult import RunResult
 
 from dotenv import load_dotenv
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
@@ -36,14 +35,14 @@ def run_cosmic_ray(workdir: Path, source_filename: str) -> tuple[int, int, float
         session.unlink()
 
     cr_toml.write_text(f"""[cosmic-ray]
-    module-path = "{source_filename}"
-    timeout = 60.0
-    excluded-modules = []
-    test-command = "pytest -x --tb=no tests/"
+module-path = "{source_filename}"
+timeout = 60.0
+excluded-modules = []
+test-command = "pytest -x --tb=no tests/"
 
-    [cosmic-ray.distributor]
-    name = "local"
-    """)
+[cosmic-ray.distributor]
+name = "local"
+""")
 
     bl = subprocess.run(
         ["cosmic-ray", "--verbosity=INFO", "baseline", "cr.toml"],
@@ -143,7 +142,7 @@ def run_one_function(
             encoding="utf-8",
         )
 
-        n_generated, n_kept = filter_passing_tests(workdir, tests_dir / "test_naive.py")
+        n_generated, n_kept, _ = filter_passing_tests(workdir, tests_dir / "test_naive.py")
 
         timer_start = time.perf_counter()
         mutants_total, mutants_killed, mutation_score = run_cosmic_ray(
@@ -190,7 +189,7 @@ def run_one_function(
         )
 
 
-def filter_passing_tests(workdir: Path, test_file: Path) -> tuple[int, int]:
+def filter_passing_tests(workdir: Path, test_file: Path) -> tuple[int, int, list[str]]:
     """
     Run all tests in test_file against unmutated source. Drop Failing
     """
@@ -250,7 +249,7 @@ def filter_passing_tests(workdir: Path, test_file: Path) -> tuple[int, int]:
         raise RuntimeError(f"All {total} tests failed; nothing to mutate-test against.")
 
     test_file.write_text(ast.unparse(tree), encoding="utf-8")
-    return total, kept
+    return total, kept, sorted(failing)
 
 def main():
     api_key = os.getenv("OPENAI_API_KEY")
@@ -280,8 +279,8 @@ def main():
     fieldnames = list(RunResult.__dataclass_fields__.keys())
     all_results: list[RunResult] = []
 
-    # function_dirs = function_dirs[:1]
-    # n_runs_per_function = 1 
+    # function_dirs = function_dirs[3:4]
+    # n_runs_per_function = 2
 
     with csv_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
