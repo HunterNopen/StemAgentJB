@@ -1,0 +1,61 @@
+function_dir: benchmark\external\sort1
+result:
+  function_name: sort1
+  axis: stateful
+  complexity: textbook
+  run_index: 2
+  model: gpt-4o-mini
+  n_iterations: 2
+  stopped_because: plateau
+  final_mutation_score: 86.48648648648648
+  final_mutants_total: 185
+  final_mutants_killed: 160
+  final_tests_generated: 6
+  final_tests_kept: 4
+  research_category: sorting algorithms
+  total_tokens_in: 4713
+  total_tokens_out: 3444
+  total_seconds: 1364.4966750000021
+  error: null
+research:
+  category: sorting algorithms
+  rationale: The function provides multiple implementations of sorting algorithms,
+    each with distinct methodologies for ordering elements in a list.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: To ensure that edge cases like empty lists, single-element lists,
+      and already sorted lists are handled correctly.
+  - name: equivalence partitioning
+    why_relevant: To validate that the sorting algorithms behave consistently across
+      different types of input, including duplicates and varying sizes.
+  - name: performance testing
+    why_relevant: To assess the time complexity of each sorting algorithm, especially
+      for larger datasets, ensuring they perform within expected limits.
+  - name: in-place vs. non-in-place testing
+    why_relevant: To verify that the in-place sorting (quick_sort) correctly modifies
+      the input list without returning a new list, while other methods return new
+      sorted lists.
+  concerns:
+  - Naive testing might miss the specific behavior of each sorting algorithm under
+    various conditions, such as performance on nearly sorted data.
+  - Potential issues with the quick_sort method if invalid bounds are provided, which
+    could lead to runtime errors.
+  - The merge function's behavior with large lists or lists with many duplicates may
+    not be thoroughly tested.
+iterations:
+- iteration: 0
+  tests_generated: 6
+  tests_kept: 4
+  mutation_score: 85.4054054054054
+  mutants_total: 185
+  mutants_killed: 158
+  tokens_in: 1249
+  tokens_out: 1153
+- iteration: 1
+  tests_generated: 6
+  tests_kept: 4
+  mutation_score: 86.48648648648648
+  mutants_total: 185
+  mutants_killed: 160
+  tokens_in: 2383
+  tokens_out: 1992

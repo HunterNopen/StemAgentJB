@@ -1,0 +1,67 @@
+function_dir: benchmark\internal\parse_log_line
+result:
+  function_name: parse_log_line
+  axis: pure
+  complexity: simple
+  run_index: 1
+  model: gpt-4o-mini
+  n_iterations: 3
+  stopped_because: plateau
+  final_mutation_score: 88.77551020408163
+  final_mutants_total: 98
+  final_mutants_killed: 87
+  final_tests_generated: 8
+  final_tests_kept: 7
+  research_category: parser
+  total_tokens_in: 6778
+  total_tokens_out: 3404
+  total_seconds: 449.298333499999
+  error: null
+research:
+  category: parser
+  rationale: The function is designed to parse a specific format of log lines into
+    a structured dictionary, handling various input cases and validation rules.
+  test_patterns:
+  - name: happy path
+    why_relevant: To ensure that valid log lines are correctly parsed into the expected
+      dictionary format.
+  - name: input validation
+    why_relevant: To verify that the function raises appropriate exceptions for invalid
+      input types and values.
+  - name: malformed input handling
+    why_relevant: To check that the function returns None for various malformed log
+      lines that do not meet the parsing criteria.
+  - name: edge case testing
+    why_relevant: To ensure that edge cases, such as boundary values for time components,
+      are handled correctly.
+  concerns:
+  - Potentially missing tests for all combinations of malformed input that could lead
+    to None being returned.
+  - Edge cases related to leap seconds or unusual date formats may not be covered.
+  - The function does not explicitly handle timezone information, which could be relevant
+    in some log formats.
+iterations:
+- iteration: 0
+  tests_generated: 4
+  tests_kept: 3
+  mutation_score: 67.34693877551021
+  mutants_total: 98
+  mutants_killed: 66
+  tokens_in: 1251
+  tokens_out: 658
+- iteration: 1
+  tests_generated: 8
+  tests_kept: 6
+  mutation_score: 88.77551020408163
+  mutants_total: 98
+  mutants_killed: 87
+  tokens_in: 2021
+  tokens_out: 1131
+- iteration: 2
+  tests_generated: 8
+  tests_kept: 7
+  mutation_score: 88.77551020408163
+  mutants_total: 98
+  mutants_killed: 87
+  tokens_in: 2410
+  tokens_out: 1355

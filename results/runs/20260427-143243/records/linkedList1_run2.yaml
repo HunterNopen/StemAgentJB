@@ -1,0 +1,68 @@
+function_dir: benchmark\external\linkedList1
+result:
+  function_name: linkedList1
+  axis: stateful
+  complexity: textbook
+  run_index: 2
+  model: gpt-4o-mini
+  n_iterations: 3
+  stopped_because: iteration_cap
+  final_mutation_score: 46.57534246575342
+  final_mutants_total: 146
+  final_mutants_killed: 68
+  final_tests_generated: 26
+  final_tests_kept: 21
+  research_category: data structure
+  total_tokens_in: 9977
+  total_tokens_out: 4422
+  total_seconds: 498.20971100000315
+  error: null
+research:
+  category: data structure
+  rationale: The function implements linked list data structures, specifically singly
+    and doubly linked lists, providing methods for element manipulation and traversal.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: To ensure that index-based operations correctly handle edge cases
+      like negative indices and indices equal to or greater than the size.
+  - name: exception handling
+    why_relevant: To validate that appropriate exceptions are raised for invalid operations,
+      such as accessing out-of-bounds indices or calling next() past the end.
+  - name: state verification
+    why_relevant: To confirm that the internal state of the list (size, head, cursor)
+      is correctly updated after operations like append and insert.
+  - name: identity checks
+    why_relevant: To test the behavior of the __contains__ method, which relies on
+      identity rather than equality, ensuring it behaves as expected.
+  concerns:
+  - Potential issues with cursor management in the iterator and previous methods,
+    which may lead to unexpected StopIteration errors.
+  - The performance implications of O(n) operations for get/set methods may not be
+    apparent without stress testing.
+  - Inheritance from SinglyLinkedList in DoublyLinkedList may lead to untested paths
+    if not all methods are overridden or properly validated.
+iterations:
+- iteration: 0
+  tests_generated: 11
+  tests_kept: 8
+  mutation_score: 41.0958904109589
+  mutants_total: 146
+  mutants_killed: 60
+  tokens_in: 1922
+  tokens_out: 930
+- iteration: 1
+  tests_generated: 25
+  tests_kept: 19
+  mutation_score: 43.15068493150685
+  mutants_total: 146
+  mutants_killed: 63
+  tokens_in: 2863
+  tokens_out: 1568
+- iteration: 2
+  tests_generated: 26
+  tests_kept: 21
+  mutation_score: 46.57534246575342
+  mutants_total: 146
+  mutants_killed: 68
+  tokens_in: 3442
+  tokens_out: 1616

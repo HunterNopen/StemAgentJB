@@ -1,0 +1,2 @@
+function_name,axis,complexity,run_index,model,n_iterations,stopped_because,final_mutation_score,final_mutants_total,final_mutants_killed,final_tests_generated,final_tests_kept,research_category,total_tokens_in,total_tokens_out,total_seconds,error
+linkedList1,stateful,textbook,0,gpt-4o-mini,3,plateau,43.83561643835616,146,64,19,10,data structure,9259,3638,507.88455650000105,

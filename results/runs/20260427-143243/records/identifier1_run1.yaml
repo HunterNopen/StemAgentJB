@@ -1,0 +1,58 @@
+function_dir: benchmark\external\identifier1
+result:
+  function_name: identifier1
+  axis: stateful
+  complexity: textbook
+  run_index: 1
+  model: gpt-4o-mini
+  n_iterations: 2
+  stopped_because: plateau
+  final_mutation_score: 86.42857142857143
+  final_mutants_total: 140
+  final_mutants_killed: 121
+  final_tests_generated: 10
+  final_tests_kept: 9
+  research_category: input validator
+  total_tokens_in: 3363
+  total_tokens_out: 1711
+  total_seconds: 408.2583943000027
+  error: null
+research:
+  category: input validator
+  rationale: The function validates identifiers based on specific character and length
+    rules, making it an input validator that checks the validity of strings against
+    defined criteria.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: To ensure the function correctly handles edge cases like minimum
+      and maximum lengths.
+  - name: equivalence partitioning
+    why_relevant: To test various categories of input, such as valid identifiers,
+      invalid first characters, and invalid lengths.
+  - name: state-based testing
+    why_relevant: To verify the function's behavior based on the state of the input
+      string, particularly the first character and subsequent characters.
+  concerns:
+  - The function may not handle non-string inputs gracefully, leading to potential
+    runtime errors.
+  - The logic for setting 'valid_id' may not correctly reset for each character after
+    the first, potentially leading to false positives.
+  - The function does not explicitly check for invalid characters beyond the first
+    character, which could lead to incorrect validation results.
+iterations:
+- iteration: 0
+  tests_generated: 7
+  tests_kept: 6
+  mutation_score: 86.42857142857143
+  mutants_total: 140
+  mutants_killed: 121
+  tokens_in: 898
+  tokens_out: 687
+- iteration: 1
+  tests_generated: 10
+  tests_kept: 9
+  mutation_score: 86.42857142857143
+  mutants_total: 140
+  mutants_killed: 121
+  tokens_in: 1734
+  tokens_out: 790

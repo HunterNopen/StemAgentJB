@@ -1,0 +1,61 @@
+function_dir: benchmark\internal\is_future_date
+result:
+  function_name: is_future_date
+  axis: pure
+  complexity: simple
+  run_index: 2
+  model: gpt-4o-mini
+  n_iterations: 2
+  stopped_because: plateau
+  final_mutation_score: 78.27476038338658
+  final_mutants_total: 313
+  final_mutants_killed: 245
+  final_tests_generated: 17
+  final_tests_kept: 17
+  research_category: validation-forwarding
+  total_tokens_in: 4251
+  total_tokens_out: 2572
+  total_seconds: 820.9212150999992
+  error: null
+research:
+  category: validation-forwarding
+  rationale: The function primarily relies on the behavior of the `validate_date`
+    function to determine the validity of the input dates, making it a validation-forwarding
+    function.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: Testing dates around the boundary conditions (e.g., equal dates,
+      leap years) ensures that edge cases are handled correctly.
+  - name: exception testing
+    why_relevant: Verifying that the function raises the appropriate exceptions for
+      invalid inputs (None or non-string) is crucial for robustness.
+  - name: input validation
+    why_relevant: Since the function relies on the validity of the input dates, testing
+      with both valid and invalid date strings is essential.
+  - name: equivalence partitioning
+    why_relevant: This pattern helps in testing various categories of input (valid
+      future dates, valid past dates, invalid dates) to ensure comprehensive coverage.
+  concerns:
+  - The function's behavior is heavily dependent on the correctness of the `validate_date`
+    function, which could lead to issues if that function has bugs.
+  - Edge cases related to date formats or invalid dates may not be fully covered if
+    not explicitly tested.
+  - The function does not handle timezone differences, which could affect date comparisons
+    in a broader context.
+iterations:
+- iteration: 0
+  tests_generated: 13
+  tests_kept: 12
+  mutation_score: 77.95527156549521
+  mutants_total: 313
+  mutants_killed: 244
+  tokens_in: 1115
+  tokens_out: 1121
+- iteration: 1
+  tests_generated: 17
+  tests_kept: 17
+  mutation_score: 78.27476038338658
+  mutants_total: 313
+  mutants_killed: 245
+  tokens_in: 2200
+  tokens_out: 1140

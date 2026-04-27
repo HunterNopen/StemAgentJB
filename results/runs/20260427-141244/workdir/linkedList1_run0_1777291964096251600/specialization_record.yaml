@@ -1,0 +1,72 @@
+function_name: linkedList1
+run_index: 0
+research:
+  category: data structure
+  rationale: The function implements linked list data structures, specifically singly
+    and doubly linked lists, providing methods for element manipulation and traversal.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: To ensure that index-based operations correctly handle edge cases
+      like negative indices and indices equal to or greater than the size.
+  - name: exception handling
+    why_relevant: To validate that appropriate exceptions are raised for invalid operations,
+      such as accessing out-of-bounds indices or calling next() past the end.
+  - name: state verification
+    why_relevant: To confirm that the internal state of the list (size, head, cursor)
+      is correctly updated after operations like append and insert.
+  - name: identity checks
+    why_relevant: To test the behavior of the __contains__ method, which relies on
+      object identity rather than equality.
+  - name: iterative behavior
+    why_relevant: To ensure that the iterator protocol functions correctly, including
+      proper handling of StopIteration.
+  concerns:
+  - Potential issues with memory management and node references that could lead to
+    memory leaks or dangling pointers.
+  - The performance implications of O(n) operations for get/set methods may not be
+    apparent without stress testing.
+  - The behavior of the previous() method in the doubly linked list may not be thoroughly
+    tested, especially in edge cases.
+iterations:
+- iteration: 0
+  tests_generated: 13
+  tests_kept: 7
+  mutation_score: 39.04109589041096
+  mutants_total: 146
+  mutants_killed: 57
+  tokens_in: 1918
+  tokens_out: 1003
+- iteration: 1
+  tests_generated: 17
+  tests_kept: 9
+  mutation_score: 42.465753424657535
+  mutants_total: 146
+  mutants_killed: 62
+  tokens_in: 2742
+  tokens_out: 1099
+- iteration: 2
+  tests_generated: 19
+  tests_kept: 10
+  mutation_score: 43.83561643835616
+  mutants_total: 146
+  mutants_killed: 64
+  tokens_in: 2849
+  tokens_out: 1203
+result:
+  function_name: linkedList1
+  axis: stateful
+  complexity: textbook
+  run_index: 0
+  model: gpt-4o-mini
+  n_iterations: 3
+  stopped_because: plateau
+  final_mutation_score: 43.83561643835616
+  final_mutants_total: 146
+  final_mutants_killed: 64
+  final_tests_generated: 19
+  final_tests_kept: 10
+  research_category: data structure
+  total_tokens_in: 9259
+  total_tokens_out: 3638
+  total_seconds: 507.88455650000105
+  error: null

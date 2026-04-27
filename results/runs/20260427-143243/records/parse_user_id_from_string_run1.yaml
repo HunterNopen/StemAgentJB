@@ -1,0 +1,62 @@
+function_dir: benchmark\internal\parse_user_id_from_string
+result:
+  function_name: parse_user_id_from_string
+  axis: pure
+  complexity: medium
+  run_index: 1
+  model: gpt-4o-mini
+  n_iterations: 2
+  stopped_because: plateau
+  final_mutation_score: 66.66666666666667
+  final_mutants_total: 30
+  final_mutants_killed: 20
+  final_tests_generated: 16
+  final_tests_kept: 13
+  research_category: parser
+  total_tokens_in: 3637
+  total_tokens_out: 2365
+  total_seconds: 138.07541750000019
+  error: null
+research:
+  category: parser
+  rationale: This function is designed to parse and extract a user ID from various
+    string formats, making it distinct as a parser that interprets input based on
+    defined patterns.
+  test_patterns:
+  - name: input validation
+    why_relevant: The function raises exceptions for invalid input types, so tests
+      should ensure that these exceptions are raised correctly.
+  - name: pattern matching
+    why_relevant: The function uses specific patterns to extract user IDs, necessitating
+      tests for each pattern to confirm correct parsing behavior.
+  - name: edge case handling
+    why_relevant: The function has specific rules for edge cases, and tests should
+      cover these scenarios to ensure robustness.
+  - name: fallback behavior
+    why_relevant: The function includes a fallback mechanism for digit extraction,
+      which should be tested to ensure it behaves as expected when primary patterns
+      do not match.
+  concerns:
+  - Naive tests may not cover all string formats or combinations, potentially missing
+    edge cases.
+  - The function's reliance on string methods may overlook performance issues with
+    very large strings.
+  - Tests should ensure that all exceptions are raised in the correct scenarios, as
+    missing these could lead to silent failures.
+iterations:
+- iteration: 0
+  tests_generated: 15
+  tests_kept: 12
+  mutation_score: 66.66666666666667
+  mutants_total: 30
+  mutants_killed: 20
+  tokens_in: 927
+  tokens_out: 1067
+- iteration: 1
+  tests_generated: 16
+  tests_kept: 13
+  mutation_score: 66.66666666666667
+  mutants_total: 30
+  mutants_killed: 20
+  tokens_in: 1951
+  tokens_out: 1010

@@ -1,0 +1,62 @@
+function_name: parse_user_id_from_string
+run_index: 2
+research:
+  category: parser
+  rationale: This function is designed to parse and extract a user ID from various
+    string formats, making it distinct as a parser that interprets input based on
+    defined patterns.
+  test_patterns:
+  - name: input validation
+    why_relevant: To ensure that the function correctly raises exceptions for invalid
+      input types and handles None.
+  - name: pattern matching
+    why_relevant: To verify that the function correctly identifies and processes each
+      specified pattern for extracting user IDs.
+  - name: edge case testing
+    why_relevant: To confirm that the function behaves as expected for edge cases,
+      such as empty strings and strings without digits.
+  - name: fallback behavior
+    why_relevant: To test the fallback mechanism for collecting digits from the input
+      string when no other patterns match.
+  concerns:
+  - Potential issues with strings that contain mixed formats or unexpected characters
+    that could affect digit extraction.
+  - The function may not handle very large integers correctly if the input string
+    represents a number larger than what can be stored in an int.
+  - Performance concerns with very long strings or strings with many non-digit characters,
+    which could affect the digit collection process.
+iterations:
+- iteration: 0
+  tests_generated: 7
+  tests_kept: 5
+  mutation_score: 66.66666666666667
+  mutants_total: 30
+  mutants_killed: 20
+  tokens_in: 937
+  tokens_out: 577
+- iteration: 1
+  tests_generated: 8
+  tests_kept: 6
+  mutation_score: 66.66666666666667
+  mutants_total: 30
+  mutants_killed: 20
+  tokens_in: 1565
+  tokens_out: 623
+result:
+  function_name: parse_user_id_from_string
+  axis: pure
+  complexity: medium
+  run_index: 2
+  model: gpt-4o-mini
+  n_iterations: 2
+  stopped_because: plateau
+  final_mutation_score: 66.66666666666667
+  final_mutants_total: 30
+  final_mutants_killed: 20
+  final_tests_generated: 8
+  final_tests_kept: 6
+  research_category: parser
+  total_tokens_in: 3261
+  total_tokens_out: 1466
+  total_seconds: 116.12357229999907
+  error: null

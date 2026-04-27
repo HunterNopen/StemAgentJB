@@ -1,0 +1,63 @@
+function_dir: benchmark\external\linkedList1
+result:
+  function_name: linkedList1
+  axis: stateful
+  complexity: textbook
+  run_index: 0
+  model: gpt-4o-mini
+  n_iterations: 2
+  stopped_because: plateau
+  final_mutation_score: 41.0958904109589
+  final_mutants_total: 146
+  final_mutants_killed: 60
+  final_tests_generated: 15
+  final_tests_kept: 10
+  research_category: data structure
+  total_tokens_in: 6354
+  total_tokens_out: 2586
+  total_seconds: 327.0083322999999
+  error: null
+research:
+  category: data structure
+  rationale: The function implements linked list data structures, specifically singly
+    and doubly linked lists, providing methods for element manipulation and traversal.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: To ensure that index-based operations correctly handle edge cases
+      like negative indices and indices equal to or greater than the size.
+  - name: exception handling
+    why_relevant: To verify that appropriate exceptions are raised for invalid operations,
+      such as accessing out-of-bounds indices or calling next() past the end.
+  - name: state verification
+    why_relevant: To confirm that the internal state of the list (size, head, cursor)
+      is correctly updated after operations like append and insert.
+  - name: identity checks
+    why_relevant: To validate that the __contains__ method correctly checks for object
+      identity rather than equality.
+  - name: iterative behavior
+    why_relevant: To test the iterator protocol and ensure that next() and previous()
+      methods function correctly in various scenarios.
+  concerns:
+  - Potential issues with memory management and node references that could lead to
+    memory leaks or dangling pointers.
+  - The performance implications of O(n) operations for get/set methods may not be
+    apparent without stress testing.
+  - The behavior of the cursor during iteration may not be intuitive, especially after
+    insertions or deletions.
+iterations:
+- iteration: 0
+  tests_generated: 12
+  tests_kept: 6
+  mutation_score: 39.726027397260275
+  mutants_total: 146
+  mutants_killed: 58
+  tokens_in: 1914
+  tokens_out: 1193
+- iteration: 1
+  tests_generated: 15
+  tests_kept: 10
+  mutation_score: 41.0958904109589
+  mutants_total: 146
+  mutants_killed: 60
+  tokens_in: 2690
+  tokens_out: 1063

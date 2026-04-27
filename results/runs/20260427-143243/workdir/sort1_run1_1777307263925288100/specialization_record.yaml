@@ -1,0 +1,69 @@
+function_name: sort1
+run_index: 1
+research:
+  category: sorting algorithms
+  rationale: The function provides multiple implementations of sorting algorithms,
+    each with distinct methodologies for ordering elements in a list.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: To ensure that edge cases like empty lists, single-element lists,
+      and already sorted lists are handled correctly.
+  - name: equivalence partitioning
+    why_relevant: To validate that the sorting algorithms behave consistently across
+      different types of input, including duplicates and varying sizes.
+  - name: performance testing
+    why_relevant: To assess the time complexity of each sorting algorithm, especially
+      for larger datasets, ensuring they perform within expected limits.
+  - name: in-place vs. non-in-place testing
+    why_relevant: To verify that the in-place sorting (quick_sort) modifies the original
+      list correctly while the other methods return new sorted lists.
+  concerns:
+  - Naive testing might miss performance issues with large datasets or specific input
+    patterns that could lead to worst-case scenarios.
+  - The quick_sort function requires careful validation of the 'first' and 'last'
+    parameters to avoid index errors.
+  - Potential issues with stability in sorting algorithms, especially with duplicate
+    values, may not be immediately apparent.
+iterations:
+- iteration: 0
+  tests_generated: 7
+  tests_kept: 5
+  mutation_score: 85.94594594594595
+  mutants_total: 185
+  mutants_killed: 159
+  tokens_in: 1249
+  tokens_out: 1349
+- iteration: 1
+  tests_generated: 15
+  tests_kept: 12
+  mutation_score: 88.10810810810811
+  mutants_total: 185
+  mutants_killed: 163
+  tokens_in: 2558
+  tokens_out: 2090
+- iteration: 2
+  tests_generated: 18
+  tests_kept: 17
+  mutation_score: 88.10810810810811
+  mutants_total: 185
+  mutants_killed: 163
+  tokens_in: 3277
+  tokens_out: 2079
+result:
+  function_name: sort1
+  axis: stateful
+  complexity: textbook
+  run_index: 1
+  model: gpt-4o-mini
+  n_iterations: 3
+  stopped_because: plateau
+  final_mutation_score: 88.10810810810811
+  final_mutants_total: 185
+  final_mutants_killed: 163
+  final_tests_generated: 18
+  final_tests_kept: 17
+  research_category: sorting algorithms
+  total_tokens_in: 8165
+  total_tokens_out: 5812
+  total_seconds: 2039.4126643000018
+  error: null

@@ -1,0 +1,70 @@
+function_name: binarySearchTree1
+run_index: 2
+research:
+  category: state machine
+  rationale: The BinaryTree class manages the state of a binary search tree, allowing
+    for dynamic insertion, removal, and traversal of nodes while maintaining the properties
+    of a binary search tree.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: To ensure that edge cases such as adding/removing from an empty
+      tree and retrieving min/max values are handled correctly.
+  - name: equivalence partitioning
+    why_relevant: To validate that the tree behaves correctly for different categories
+      of input values, such as duplicates, unique values, and values that are less
+      than or greater than existing nodes.
+  - name: state transition testing
+    why_relevant: To verify that the state of the tree transitions correctly with
+      each operation (add, remove) and that the expected structure is maintained.
+  - name: exception testing
+    why_relevant: To ensure that appropriate exceptions are raised for invalid operations,
+      such as getting min/max from an empty tree.
+  concerns:
+  - Potential issues with maintaining the correct structure of the tree during removal,
+    especially with nodes that have children.
+  - Behavior of closest method when multiple values are equidistant from the target.
+  - Performance implications of operations on a non-balanced tree, especially with
+    large datasets.
+iterations:
+- iteration: 0
+  tests_generated: 19
+  tests_kept: 18
+  mutation_score: 34.59715639810427
+  mutants_total: 211
+  mutants_killed: 73
+  tokens_in: 1666
+  tokens_out: 867
+- iteration: 1
+  tests_generated: 30
+  tests_kept: 30
+  mutation_score: 45.97156398104266
+  mutants_total: 211
+  mutants_killed: 97
+  tokens_in: 2732
+  tokens_out: 1358
+- iteration: 2
+  tests_generated: 40
+  tests_kept: 37
+  mutation_score: 45.97156398104266
+  mutants_total: 211
+  mutants_killed: 97
+  tokens_in: 3283
+  tokens_out: 1812
+result:
+  function_name: binarySearchTree1
+  axis: stateful
+  complexity: textbook
+  run_index: 2
+  model: gpt-4o-mini
+  n_iterations: 3
+  stopped_because: plateau
+  final_mutation_score: 45.97156398104266
+  final_mutants_total: 211
+  final_mutants_killed: 97
+  final_tests_generated: 40
+  final_tests_kept: 37
+  research_category: state machine
+  total_tokens_in: 9179
+  total_tokens_out: 4342
+  total_seconds: 698.7939079999996
+  error: null

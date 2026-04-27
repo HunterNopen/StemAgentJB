@@ -1,0 +1,56 @@
+function_dir: benchmark\internal\transition_order_status
+result:
+  function_name: transition_order_status
+  axis: pure
+  complexity: medium
+  run_index: 0
+  model: gpt-4o-mini
+  n_iterations: 2
+  stopped_because: plateau
+  final_mutation_score: 69.38775510204081
+  final_mutants_total: 98
+  final_mutants_killed: 68
+  final_tests_generated: 10
+  final_tests_kept: 10
+  research_category: state machine
+  total_tokens_in: 3614
+  total_tokens_out: 1634
+  total_seconds: 287.2282864999979
+  error: null
+research:
+  category: state machine
+  rationale: This function manages the transitions between different order statuses
+    based on defined rules, making it a state machine that determines the next state
+    based on the current state and an action.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: Testing the edge cases of valid and invalid transitions ensures
+      that the function behaves correctly at the limits of its defined behavior.
+  - name: exception testing
+    why_relevant: Validating that the function raises the appropriate exceptions for
+      invalid inputs (None or non-string) is crucial for robustness.
+  - name: equivalence partitioning
+    why_relevant: Grouping inputs into valid and invalid categories helps ensure that
+      all scenarios are covered without redundant tests.
+  concerns:
+  - Potential for missing edge cases in the transition logic, especially with unknown
+    statuses or actions.
+  - The function does not explicitly handle invalid actions for each status, which
+    could lead to unexpected behavior if not tested thoroughly.
+iterations:
+- iteration: 0
+  tests_generated: 7
+  tests_kept: 7
+  mutation_score: 69.38775510204081
+  mutants_total: 98
+  mutants_killed: 68
+  tokens_in: 991
+  tokens_out: 562
+- iteration: 1
+  tests_generated: 10
+  tests_kept: 10
+  mutation_score: 69.38775510204081
+  mutants_total: 98
+  mutants_killed: 68
+  tokens_in: 1783
+  tokens_out: 839

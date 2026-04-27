@@ -1,0 +1,66 @@
+function_dir: benchmark\internal\validate_date
+result:
+  function_name: validate_date
+  axis: pure
+  complexity: simple
+  run_index: 1
+  model: gpt-4o-mini
+  n_iterations: 3
+  stopped_because: plateau
+  final_mutation_score: 85.4054054054054
+  final_mutants_total: 185
+  final_mutants_killed: 158
+  final_tests_generated: 9
+  final_tests_kept: 7
+  research_category: input validator
+  total_tokens_in: 5954
+  total_tokens_out: 3949
+  total_seconds: 604.9699499000017
+  error: null
+research:
+  category: input validator
+  rationale: The function validates whether a given string represents a valid date
+    in the specified format, checking both syntax and semantic correctness.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: Testing edge cases like the minimum and maximum valid years, months,
+      and days ensures that the function correctly handles limits.
+  - name: equivalence partitioning
+    why_relevant: Grouping inputs into valid and invalid categories allows for efficient
+      testing of the function's behavior across different scenarios.
+  - name: error handling
+    why_relevant: Ensuring that the function correctly raises exceptions for invalid
+      input types (e.g., None, non-string) is crucial for robustness.
+  - name: format validation
+    why_relevant: Testing various formats (e.g., incorrect separators, missing zero-padding)
+      ensures that the function strictly adheres to the expected date format.
+  concerns:
+  - The function does not raise exceptions for invalid date formats, which could lead
+    to silent failures.
+  - Naive testing might miss edge cases related to leap years or invalid day values
+    for specific months.
+iterations:
+- iteration: 0
+  tests_generated: 6
+  tests_kept: 4
+  mutation_score: 75.67567567567568
+  mutants_total: 185
+  mutants_killed: 140
+  tokens_in: 964
+  tokens_out: 1112
+- iteration: 1
+  tests_generated: 9
+  tests_kept: 7
+  mutation_score: 85.4054054054054
+  mutants_total: 185
+  mutants_killed: 158
+  tokens_in: 1858
+  tokens_out: 1295
+- iteration: 2
+  tests_generated: 9
+  tests_kept: 7
+  mutation_score: 85.4054054054054
+  mutants_total: 185
+  mutants_killed: 158
+  tokens_in: 2307
+  tokens_out: 1271

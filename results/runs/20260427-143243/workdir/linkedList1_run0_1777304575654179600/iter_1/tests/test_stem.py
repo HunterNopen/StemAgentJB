@@ -1,0 +1,98 @@
+from source import SinglyLinkedList, DoublyLinkedList, SinglyLinkedNode, DoublyLinkedNode
+import pytest
+
+def test_singly_linked_list_append():
+    sll = SinglyLinkedList()
+    sll.append(1)
+    sll.append(2)
+    sll.append(3)
+    assert len(sll) == 3
+    assert sll[0] == 1
+    assert sll[1] == 2
+    assert sll[2] == 3
+
+def test_singly_linked_list_get_set():
+    sll = SinglyLinkedList()
+    sll.append(1)
+    sll.append(2)
+    sll.append(3)
+    sll[1] = 5
+    assert sll[1] == 5
+    with pytest.raises(IndexError):
+        sll[3]
+    with pytest.raises(IndexError):
+        sll[-1]
+
+def test_singly_linked_list_contains():
+    sll = SinglyLinkedList()
+    a = object()
+    b = object()
+    sll.append(a)
+    sll.append(b)
+    assert a in sll
+    assert b in sll
+    assert object() not in sll
+
+def test_singly_linked_list_next():
+    sll = SinglyLinkedList()
+    sll.append(1)
+    sll.append(2)
+    sll.cursor = sll.head
+    assert sll.next() == 1
+    assert sll.next() == 2
+    with pytest.raises(StopIteration):
+        sll.next()
+
+def test_doubly_linked_list_append():
+    dll = DoublyLinkedList()
+    dll.append(1)
+    dll.append(2)
+    dll.append(3)
+    assert len(dll) == 3
+    assert dll[0] == 1
+    assert dll[1] == 2
+    assert dll[2] == 3
+
+def test_memory_management():
+    import gc
+    gc.collect()
+    dll = DoublyLinkedList()
+    for i in range(1000):
+        dll.append(i)
+    assert len(dll) == 1000
+    del dll
+    gc.collect()
+    assert gc.garbage == []
+
+def test_singly_linked_list_negative_index():
+    sll = SinglyLinkedList()
+    sll.append(1)
+    with pytest.raises(IndexError):
+        sll[-1]
+
+def test_singly_linked_list_out_of_range_index():
+    sll = SinglyLinkedList()
+    sll.append(1)
+    with pytest.raises(IndexError):
+        sll[1]
+
+def test_doubly_linked_list_previous():
+    dll = DoublyLinkedList()
+    dll.append(1)
+    dll.append(2)
+    dll.cursor = dll.head.next
+    assert dll.previous() == 1
+    with pytest.raises(StopIteration):
+        dll.previous()
+
+def test_doubly_linked_list_cursor_behavior():
+    dll = DoublyLinkedList()
+    dll.append(1)
+    dll.append(2)
+    dll.append(3)
+    dll.cursor = dll.head
+    assert dll.next() == 1
+    assert dll.next() == 2
+    assert dll.next() == 3
+    with pytest.raises(StopIteration):
+        dll.next()

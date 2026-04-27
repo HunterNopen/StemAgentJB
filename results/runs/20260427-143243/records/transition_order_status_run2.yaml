@@ -1,0 +1,61 @@
+function_dir: benchmark\internal\transition_order_status
+result:
+  function_name: transition_order_status
+  axis: pure
+  complexity: medium
+  run_index: 2
+  model: gpt-4o-mini
+  n_iterations: 2
+  stopped_because: plateau
+  final_mutation_score: 69.38775510204081
+  final_mutants_total: 98
+  final_mutants_killed: 68
+  final_tests_generated: 10
+  final_tests_kept: 10
+  research_category: state machine
+  total_tokens_in: 3835
+  total_tokens_out: 2043
+  total_seconds: 304.5873637000004
+  error: null
+research:
+  category: state machine
+  rationale: This function manages the transitions between different order statuses
+    based on defined rules, making it a state machine that determines the next state
+    based on the current state and an action.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: Testing the edges of valid and invalid inputs ensures that the function
+      correctly handles transitions and rejects invalid states or actions.
+  - name: equivalence partitioning
+    why_relevant: By categorizing inputs into valid and invalid groups, we can reduce
+      the number of test cases while ensuring that all scenarios are covered.
+  - name: exception testing
+    why_relevant: Since the function raises exceptions for invalid inputs, it's crucial
+      to test these cases to ensure proper error handling.
+  - name: state transition testing
+    why_relevant: This pattern focuses on verifying that the function correctly transitions
+      between states according to the defined rules.
+  concerns:
+  - Potentially missing tests for all combinations of valid and invalid actions for
+    each status.
+  - Not accounting for unexpected input types beyond just strings, such as empty strings
+    or whitespace.
+  - Failure to test the function's behavior with unknown statuses that are not explicitly
+    defined.
+iterations:
+- iteration: 0
+  tests_generated: 9
+  tests_kept: 9
+  mutation_score: 69.38775510204081
+  mutants_total: 98
+  mutants_killed: 68
+  tokens_in: 1004
+  tokens_out: 762
+- iteration: 1
+  tests_generated: 10
+  tests_kept: 10
+  mutation_score: 69.38775510204081
+  mutants_total: 98
+  mutants_killed: 68
+  tokens_in: 1991
+  tokens_out: 994

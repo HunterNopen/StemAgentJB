@@ -1,0 +1,59 @@
+function_dir: benchmark\internal\is_future_date
+result:
+  function_name: is_future_date
+  axis: pure
+  complexity: simple
+  run_index: 0
+  model: gpt-4o-mini
+  n_iterations: 2
+  stopped_because: plateau
+  final_mutation_score: 77.95527156549521
+  final_mutants_total: 313
+  final_mutants_killed: 244
+  final_tests_generated: 23
+  final_tests_kept: 22
+  research_category: validation-forwarding
+  total_tokens_in: 4291
+  total_tokens_out: 2619
+  total_seconds: 681.660151
+  error: null
+research:
+  category: validation-forwarding
+  rationale: The function primarily relies on the behavior of the `validate_date`
+    function to determine the validity of the input dates, making it a validation-forwarding
+    function.
+  test_patterns:
+  - name: input validation
+    why_relevant: To ensure that the function correctly raises exceptions for invalid
+      input types and None values.
+  - name: boundary testing
+    why_relevant: To verify the behavior of the function at the edges of valid date
+      comparisons, especially around equal dates.
+  - name: integration testing
+    why_relevant: To confirm that the interaction between `is_future_date` and `validate_date`
+      works as expected, particularly for valid and invalid date strings.
+  - name: error handling
+    why_relevant: To check that the function handles invalid date formats and raises
+      appropriate exceptions.
+  concerns:
+  - The function may not handle all edge cases of date validity if `validate_date`
+    has undiscovered bugs.
+  - The reliance on string manipulation for date comparison could lead to errors if
+    the input format is not strictly followed.
+iterations:
+- iteration: 0
+  tests_generated: 19
+  tests_kept: 17
+  mutation_score: 77.31629392971246
+  mutants_total: 313
+  mutants_killed: 242
+  tokens_in: 1088
+  tokens_out: 1090
+- iteration: 1
+  tests_generated: 23
+  tests_kept: 22
+  mutation_score: 77.95527156549521
+  mutants_total: 313
+  mutants_killed: 244
+  tokens_in: 2267
+  tokens_out: 1265

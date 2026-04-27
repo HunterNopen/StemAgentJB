@@ -1,0 +1,59 @@
+function_dir: benchmark\internal\transition_account_state
+result:
+  function_name: transition_account_state
+  axis: pure
+  complexity: medium
+  run_index: 0
+  model: gpt-4o-mini
+  n_iterations: 2
+  stopped_because: plateau
+  final_mutation_score: 73.0
+  final_mutants_total: 100
+  final_mutants_killed: 73
+  final_tests_generated: 12
+  final_tests_kept: 8
+  research_category: state machine
+  total_tokens_in: 4074
+  total_tokens_out: 1886
+  total_seconds: 259.88874360000045
+  error: null
+research:
+  category: state machine
+  rationale: This function implements a state machine that transitions an account's
+    state based on defined rules and actions, making it distinct in its handling of
+    state transitions.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: Testing around the edges of valid and invalid states and actions
+      will help ensure that transitions occur correctly at critical points.
+  - name: equivalence partitioning
+    why_relevant: This will help identify representative test cases for valid and
+      invalid states and actions, reducing the number of tests while ensuring coverage.
+  - name: exception testing
+    why_relevant: Validating that the function raises appropriate exceptions for invalid
+      inputs (e.g., unknown states or negative failed login counts) is crucial for
+      robustness.
+  concerns:
+  - Naive testing might miss edge cases where the same state is returned for multiple
+    actions, leading to potential misunderstandings of state transitions.
+  - The normalization of failed_login_count could mask issues if not tested thoroughly,
+    especially with negative values.
+  - Invalid actions that do not change the state may not be adequately tested, leading
+    to assumptions about the function's behavior.
+iterations:
+- iteration: 0
+  tests_generated: 11
+  tests_kept: 7
+  mutation_score: 73.0
+  mutants_total: 100
+  mutants_killed: 73
+  tokens_in: 1133
+  tokens_out: 724
+- iteration: 1
+  tests_generated: 12
+  tests_kept: 8
+  mutation_score: 73.0
+  mutants_total: 100
+  mutants_killed: 73
+  tokens_in: 1983
+  tokens_out: 893

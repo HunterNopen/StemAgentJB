@@ -1,0 +1,63 @@
+function_dir: benchmark\external\binarySearchTree1
+result:
+  function_name: binarySearchTree1
+  axis: stateful
+  complexity: textbook
+  run_index: 1
+  model: gpt-4o-mini
+  n_iterations: 2
+  stopped_because: plateau
+  final_mutation_score: 54.02843601895734
+  final_mutants_total: 211
+  final_mutants_killed: 114
+  final_tests_generated: 27
+  final_tests_kept: 25
+  research_category: state machine
+  total_tokens_in: 6045
+  total_tokens_out: 2727
+  total_seconds: 581.4820226000011
+  error: null
+research:
+  category: state machine
+  rationale: The BinaryTree class manages the state of a binary search tree, allowing
+    for dynamic insertion, removal, and traversal of nodes while maintaining the properties
+    of a binary search tree.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: To ensure that edge cases such as adding/removing from an empty
+      tree and retrieving min/max values are handled correctly.
+  - name: equivalence partitioning
+    why_relevant: To validate that the tree behaves correctly for different categories
+      of input values, such as duplicates, values less than, equal to, and greater
+      than existing nodes.
+  - name: state transition testing
+    why_relevant: To verify that the state of the tree transitions correctly with
+      each add and remove operation, especially in maintaining the binary search tree
+      properties.
+  - name: exception handling
+    why_relevant: To ensure that appropriate exceptions are raised for invalid operations,
+      such as getting min/max from an empty tree.
+  concerns:
+  - Potential issues with maintaining tree balance over time, as this is a non-balanced
+    tree.
+  - The behavior of the closest method when multiple values are equidistant from the
+    target may not be fully tested.
+  - The handling of duplicate values may lead to unexpected behavior if not properly
+    validated.
+iterations:
+- iteration: 0
+  tests_generated: 19
+  tests_kept: 18
+  mutation_score: 54.02843601895734
+  mutants_total: 211
+  mutants_killed: 114
+  tokens_in: 1670
+  tokens_out: 1021
+- iteration: 1
+  tests_generated: 27
+  tests_kept: 25
+  mutation_score: 54.02843601895734
+  mutants_total: 211
+  mutants_killed: 114
+  tokens_in: 2877
+  tokens_out: 1399

@@ -1,0 +1,56 @@
+function_dir: benchmark\external\identifier1
+result:
+  function_name: identifier1
+  axis: stateful
+  complexity: textbook
+  run_index: 2
+  model: gpt-4o-mini
+  n_iterations: 2
+  stopped_because: plateau
+  final_mutation_score: 83.57142857142857
+  final_mutants_total: 140
+  final_mutants_killed: 117
+  final_tests_generated: 11
+  final_tests_kept: 10
+  research_category: input validator
+  total_tokens_in: 3234
+  total_tokens_out: 1767
+  total_seconds: 406.5916026999985
+  error: null
+research:
+  category: input validator
+  rationale: The function validates identifiers based on specific character and length
+    rules, making it an input validator that checks the validity of strings against
+    defined criteria.
+  test_patterns:
+  - name: boundary value analysis
+    why_relevant: To ensure the function correctly handles edge cases like minimum
+      and maximum lengths.
+  - name: equivalence partitioning
+    why_relevant: To test various categories of input, such as valid identifiers,
+      invalid first characters, and invalid characters.
+  - name: state transition testing
+    why_relevant: To verify the transitions between valid and invalid states as characters
+      are processed.
+  concerns:
+  - The function may not handle non-string inputs gracefully, leading to potential
+    runtime errors.
+  - The logic for invalidating the identifier may not correctly reset the valid_id
+    flag after encountering an invalid character.
+iterations:
+- iteration: 0
+  tests_generated: 8
+  tests_kept: 6
+  mutation_score: 83.57142857142857
+  mutants_total: 140
+  mutants_killed: 117
+  tokens_in: 872
+  tokens_out: 708
+- iteration: 1
+  tests_generated: 11
+  tests_kept: 10
+  mutation_score: 83.57142857142857
+  mutants_total: 140
+  mutants_killed: 117
+  tokens_in: 1631
+  tokens_out: 862
