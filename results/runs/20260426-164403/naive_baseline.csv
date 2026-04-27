@@ -1,0 +1,45 @@
+function_name,axis,complexity,run_index,model,mutants_total,mutants_killed,mutation_score,tokens_in,tokens_out,seconds_elapsed,error
+apply_discount,pure,simple,0,gpt-4o-mini,0,0,0.0,576,388,1.3894758999995247,"baseline failed: [04/26/26 16:44:14] INFO     INFO:root:Reading config from        config.py:115
+                             'cr.toml'                                         
+                    INFO     INFO:cosmic_ray.commands.execute:Beg execute.py:46
+                             inning execution                                  
+                    INFO     INFO:cosmic_ray.testing:Running test testing.py:37
+                             (timeout=60.0): pytest -x --tb=no                 
+                             tests/                                            
+[04/26/26 16:44:15] INFO     INFO:cosmic_ray.commands.execute:Job execute.py:44
+                             baseline complete                                 
+                    INFO     INFO:cosmic_ray.commands.execute:Exe execute.py:54
+                             cution finished                                   
+                    ERROR    ERROR:root:Baseline failed. Execution   cli.py:172
+                             with no mutation gives those following            
+                             errors:                                           
+                               >>> =============================               
+                             test session starts                               
+                             =============================                     
+                               >>> platform win32 -- Python 3.10.11,           
+                             pytest-9.0.1, pluggy-1.6.0                        
+                               >>> rootdir:                                    
+                             C:\Python\projects\git\StemAgentJB\resu           
+                             lts\runs\20260426-164403\workdir\apply_           
+                             discount_run0_1777214643504319600                 
+                               >>> plugins: anyio-4.9.0,                       
+                             langsmith-0.4.53                                  
+                               >>> collected 4 items                           
+                               >>>                                             
+                               >>> tests\test_naive.py .F                      
+                               >>>                                             
+                               >>> =========================== short           
+                             test summary info                                 
+                             ===========================                       
+                               >>> FAILED                                      
+                             tests/test_naive.py::test_apply_discoun           
+                             t_invalid_cases - TypeError: pr...                
+                               >>> !!!!!!!!!!!!!!!!!!!!!!!!!!                  
+                             stopping after 1 failures                         
+                             !!!!!!!!!!!!!!!!!!!!!!!!!!                        
+                               >>> ========================= 1                 
+                             failed, 1 passed in 0.02s                         
+                             =========================                         
+                               >>>                                             
+
+"

@@ -1,0 +1,2 @@
+function_name,axis,complexity,run_index,model,mutants_total,mutants_killed,mutation_score,tokens_in,tokens_out,seconds_elapsed,error
+apply_discount,pure,simple,0,gpt-4o-mini,0,0,0.0,657,486,51.41573529999732,local variable 'total' referenced before assignment
