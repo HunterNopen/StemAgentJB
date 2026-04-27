@@ -1,4 +1,3 @@
-# ------------------- 3. Parsing Log Line -------------------
 def parse_log_line(line):
     """Return dict with keys 'datetime', 'level', 'message' or None if malformed log."""
     if line is None:
