@@ -1,0 +1,153 @@
+function_name,axis,complexity,run_index,model,mutants_total,mutants_killed,mutation_score,tokens_in,tokens_out,seconds_elapsed,tests_generated,tests_kept,error
+apply_discount,pure,simple,0,gpt-4o-mini,69,66,95.65217391304348,657,402,71.36126820000209,6,3,
+apply_discount,pure,simple,1,gpt-4o-mini,69,67,97.10144927536231,657,413,71.28087310000046,6,5,
+apply_discount,pure,simple,2,gpt-4o-mini,69,67,97.10144927536231,657,416,74.95321889999832,4,3,
+apply_discount,pure,simple,3,gpt-4o-mini,69,66,95.65217391304348,657,402,77.23816269999952,6,3,
+apply_discount,pure,simple,4,gpt-4o-mini,69,67,97.10144927536231,657,486,78.9888706999991,7,7,
+can_access_resource,pure,medium,0,gpt-4o-mini,45,40,88.88888888888889,726,735,53.629565100000036,14,14,
+can_access_resource,pure,medium,1,gpt-4o-mini,45,40,88.88888888888889,726,735,53.503073899999436,14,14,
+can_access_resource,pure,medium,2,gpt-4o-mini,45,40,88.88888888888889,726,735,54.031468199998926,14,14,
+can_access_resource,pure,medium,3,gpt-4o-mini,45,40,88.88888888888889,726,735,53.26556229999915,14,14,
+can_access_resource,pure,medium,4,gpt-4o-mini,45,40,88.88888888888889,726,735,53.502892799999245,14,14,
+check_permission,pure,simple,0,gpt-4o-mini,55,43,78.18181818181819,608,426,64.47621039999649,7,7,
+check_permission,pure,simple,1,gpt-4o-mini,55,43,78.18181818181819,608,426,62.95495429999937,7,7,
+check_permission,pure,simple,2,gpt-4o-mini,55,43,78.18181818181819,608,426,64.1476361999994,7,7,
+check_permission,pure,simple,3,gpt-4o-mini,55,43,78.18181818181819,608,443,63.47897749999902,7,7,
+check_permission,pure,simple,4,gpt-4o-mini,55,43,78.18181818181819,608,392,64.38829839999744,6,6,
+is_future_date,pure,simple,0,gpt-4o-mini,128,8,6.25,617,409,142.57505010000023,6,2,
+is_future_date,pure,simple,1,gpt-4o-mini,128,8,6.25,617,451,141.72486189999836,6,2,
+is_future_date,pure,simple,2,gpt-4o-mini,128,8,6.25,617,441,142.1699645000008,6,2,
+is_future_date,pure,simple,3,gpt-4o-mini,128,8,6.25,617,409,145.95644040000116,6,2,
+is_future_date,pure,simple,4,gpt-4o-mini,128,8,6.25,617,433,144.09121250000317,6,2,
+parse_log_line,pure,simple,0,gpt-4o-mini,98,27,27.551020408163264,1011,336,110.99975760000234,4,3,
+parse_log_line,pure,simple,1,gpt-4o-mini,98,65,66.3265306122449,1011,443,113.17435549999936,4,3,
+parse_log_line,pure,simple,2,gpt-4o-mini,98,67,68.36734693877551,1011,441,111.62565330000143,4,3,
+parse_log_line,pure,simple,3,gpt-4o-mini,98,27,27.551020408163264,1011,389,109.3189409000006,4,3,
+parse_log_line,pure,simple,4,gpt-4o-mini,98,67,68.36734693877551,1011,441,110.82153939999989,4,3,
+parse_user_id_from_string,pure,medium,0,gpt-4o-mini,30,20,66.66666666666667,665,533,39.265894799995294,6,6,
+parse_user_id_from_string,pure,medium,1,gpt-4o-mini,30,20,66.66666666666667,665,389,37.85169920000044,5,4,
+parse_user_id_from_string,pure,medium,2,gpt-4o-mini,30,20,66.66666666666667,665,389,39.21666710000136,5,4,
+parse_user_id_from_string,pure,medium,3,gpt-4o-mini,30,20,66.66666666666667,665,532,31.690881399998034,6,5,
+parse_user_id_from_string,pure,medium,4,gpt-4o-mini,30,20,66.66666666666667,665,501,30.944332300001406,6,5,
+transition_account_state,pure,medium,0,gpt-4o-mini,100,72,72.0,862,440,89.22704269999667,7,5,
+transition_account_state,pure,medium,1,gpt-4o-mini,100,69,69.0,862,435,89.08806729999924,6,4,
+transition_account_state,pure,medium,2,gpt-4o-mini,100,71,71.0,862,528,87.5962825999959,18,15,
+transition_account_state,pure,medium,3,gpt-4o-mini,100,69,69.0,862,417,87.51858479999646,7,3,
+transition_account_state,pure,medium,4,gpt-4o-mini,100,71,71.0,862,504,87.3263356000025,6,4,
+transition_order_status,pure,medium,0,gpt-4o-mini,98,64,65.3061224489796,744,365,85.74357850000524,6,6,
+transition_order_status,pure,medium,1,gpt-4o-mini,98,60,61.224489795918366,744,369,85.79254349999974,6,6,
+transition_order_status,pure,medium,2,gpt-4o-mini,98,64,65.3061224489796,744,365,85.48662440000044,6,6,
+transition_order_status,pure,medium,3,gpt-4o-mini,98,60,61.224489795918366,744,369,85.36334239999996,6,6,
+transition_order_status,pure,medium,4,gpt-4o-mini,98,60,61.224489795918366,744,329,85.43351790000452,5,5,
+validate_date,pure,simple,0,gpt-4o-mini,185,119,64.32432432432432,728,625,157.66395940000075,4,2,
+validate_date,pure,simple,1,gpt-4o-mini,0,0,0.0,728,16384,0.0,0,0,"No tests collected in results\runs\20260426-185204\workdir\validate_date_run1_1777226208478244700\tests\test_naive.py.
+pytest stdout:
+============================= test session starts =============================
+collecting ... collected 0 items / 1 error
+
+=========================== short test summary info ===========================
+ERROR tests/test_naive.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+============================== 1 error in 0.41s ===============================
+
+pytest stderr:
+"
+validate_date,pure,simple,2,gpt-4o-mini,185,141,76.21621621621621,728,817,202.41931130000012,3,2,
+validate_date,pure,simple,3,gpt-4o-mini,185,126,68.10810810810811,728,664,199.91305820000707,4,3,
+validate_date,pure,simple,4,gpt-4o-mini,185,120,64.86486486486487,728,655,202.17097220000142,4,2,
+binarySearchTree1,stateful,textbook,0,gpt-4o-mini,211,99,46.91943127962085,1403,726,233.27852269999858,14,13,
+binarySearchTree1,stateful,textbook,1,gpt-4o-mini,211,96,45.497630331753555,1403,575,231.3772009000022,13,13,
+binarySearchTree1,stateful,textbook,2,gpt-4o-mini,211,94,44.54976303317535,1403,741,231.57843259999936,17,16,
+binarySearchTree1,stateful,textbook,3,gpt-4o-mini,211,94,44.54976303317535,1403,779,217.49578810000094,18,18,
+binarySearchTree1,stateful,textbook,4,gpt-4o-mini,211,104,49.28909952606635,1403,833,240.0101125000001,17,16,
+identifier1,stateful,textbook,0,gpt-4o-mini,140,125,89.28571428571429,634,743,220.44206210000266,12,12,
+identifier1,stateful,textbook,1,gpt-4o-mini,140,95,67.85714285714286,634,544,224.00039200000174,7,7,
+identifier1,stateful,textbook,2,gpt-4o-mini,0,0,0.0,634,373,0.0,0,0,"No tests collected in results\runs\20260426-185204\workdir\identifier1_run2_1777228891256004100\tests\test_naive.py.
+pytest stdout:
+============================= test session starts =============================
+collecting ... collected 0 items / 1 error
+
+=========================== short test summary info ===========================
+ERROR tests/test_naive.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+============================== 1 error in 0.26s ===============================
+
+pytest stderr:
+"
+identifier1,stateful,textbook,3,gpt-4o-mini,140,121,86.42857142857143,634,673,222.1814469000019,11,11,
+identifier1,stateful,textbook,4,gpt-4o-mini,140,96,68.57142857142857,634,485,197.63610069999413,5,4,
+linkedList1,stateful,textbook,0,gpt-4o-mini,146,55,37.67123287671233,1654,728,134.9298054999963,10,5,
+linkedList1,stateful,textbook,1,gpt-4o-mini,146,60,41.0958904109589,1654,842,134.23718160000135,11,6,
+linkedList1,stateful,textbook,2,gpt-4o-mini,146,60,41.0958904109589,1654,985,133.20252579999942,13,6,
+linkedList1,stateful,textbook,3,gpt-4o-mini,146,57,39.04109589041096,1654,935,144.37385100000392,13,6,
+linkedList1,stateful,textbook,4,gpt-4o-mini,146,57,39.04109589041096,1654,935,133.4523560000016,13,6,
+queue1,stateful,textbook,0,gpt-4o-mini,14,14,100.0,575,512,16.74680019999505,8,8,
+queue1,stateful,textbook,1,gpt-4o-mini,14,14,100.0,575,607,16.318138700000418,10,10,
+queue1,stateful,textbook,2,gpt-4o-mini,14,14,100.0,575,543,16.628722900000867,9,9,
+queue1,stateful,textbook,3,gpt-4o-mini,14,14,100.0,575,521,16.564462200003618,9,9,
+queue1,stateful,textbook,4,gpt-4o-mini,14,14,100.0,575,536,16.659628800000064,9,9,
+sort1,stateful,textbook,0,gpt-4o-mini,185,156,84.32432432432432,984,861,646.7086059000067,5,4,
+sort1,stateful,textbook,1,gpt-4o-mini,185,156,84.32432432432432,984,968,648.162955199994,6,5,
+sort1,stateful,textbook,2,gpt-4o-mini,185,156,84.32432432432432,984,968,644.3886783000053,6,5,
+sort1,stateful,textbook,3,gpt-4o-mini,185,156,84.32432432432432,984,998,630.9298322000031,6,5,
+sort1,stateful,textbook,4,gpt-4o-mini,185,156,84.32432432432432,984,891,624.0457019000023,5,4,
+stack1,stateful,textbook,0,gpt-4o-mini,0,0,0.0,1207,617,0.0,0,0,"No tests collected in results\runs\20260426-185204\workdir\stack1_run0_1777233568108202400\tests\test_naive.py.
+pytest stdout:
+============================= test session starts =============================
+collecting ... collected 0 items / 1 error
+
+=========================== short test summary info ===========================
+ERROR tests/test_naive.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+============================== 1 error in 0.23s ===============================
+
+pytest stderr:
+"
+stack1,stateful,textbook,1,gpt-4o-mini,0,0,0.0,1207,525,0.0,0,0,"No tests collected in results\runs\20260426-185204\workdir\stack1_run1_1777233580656217500\tests\test_naive.py.
+pytest stdout:
+============================= test session starts =============================
+collecting ... collected 0 items / 1 error
+
+=========================== short test summary info ===========================
+ERROR tests/test_naive.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+============================== 1 error in 0.20s ===============================
+
+pytest stderr:
+"
+stack1,stateful,textbook,2,gpt-4o-mini,0,0,0.0,1207,573,0.0,0,0,"No tests collected in results\runs\20260426-185204\workdir\stack1_run2_1777233592031722100\tests\test_naive.py.
+pytest stdout:
+============================= test session starts =============================
+collecting ... collected 0 items / 1 error
+
+=========================== short test summary info ===========================
+ERROR tests/test_naive.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+============================== 1 error in 0.20s ===============================
+
+pytest stderr:
+"
+stack1,stateful,textbook,3,gpt-4o-mini,0,0,0.0,1207,569,0.0,0,0,"No tests collected in results\runs\20260426-185204\workdir\stack1_run3_1777233604150689800\tests\test_naive.py.
+pytest stdout:
+============================= test session starts =============================
+collecting ... collected 0 items / 1 error
+
+=========================== short test summary info ===========================
+ERROR tests/test_naive.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+============================== 1 error in 0.21s ===============================
+
+pytest stderr:
+"
+stack1,stateful,textbook,4,gpt-4o-mini,0,0,0.0,1207,527,0.0,0,0,"No tests collected in results\runs\20260426-185204\workdir\stack1_run4_1777233616473087200\tests\test_naive.py.
+pytest stdout:
+============================= test session starts =============================
+collecting ... collected 0 items / 1 error
+
+=========================== short test summary info ===========================
+ERROR tests/test_naive.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+============================== 1 error in 0.20s ===============================
+
+pytest stderr:
+"

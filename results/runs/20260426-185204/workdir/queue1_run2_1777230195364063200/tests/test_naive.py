@@ -1,0 +1,89 @@
+import pytest
+from source import Queue
+
+def test_enqueue():
+    q = Queue()
+    q.enqueue(1)
+    assert len(q) == 1
+    assert q.peek() == 1
+    q.enqueue(2)
+    assert len(q) == 2
+    assert q.peek() == 1
+    q.enqueue(3)
+    assert len(q) == 3
+    assert q.peek() == 1
+
+def test_dequeue():
+    q = Queue()
+    q.enqueue(1)
+    q.enqueue(2)
+    q.enqueue(3)
+    assert q.dequeue() == 1
+    assert len(q) == 2
+    assert q.peek() == 2
+    assert q.dequeue() == 2
+    assert len(q) == 1
+    assert q.peek() == 3
+    assert q.dequeue() == 3
+    assert len(q) == 0
+
+def test_dequeue_empty():
+    q = Queue()
+    with pytest.raises(ValueError):
+        q.dequeue()
+
+def test_peek():
+    q = Queue()
+    assert q.peek() is None
+    q.enqueue(1)
+    assert q.peek() == 1
+    q.dequeue()
+    assert q.peek() is None
+
+def test_clear():
+    q = Queue()
+    q.enqueue(1)
+    q.enqueue(2)
+    q.clear()
+    assert len(q) == 0
+    assert q.peek() is None
+
+def test_enqueue_dequeue_order():
+    q = Queue()
+    items = [1, 2, 3, 4, 5]
+    for item in items:
+        q.enqueue(item)
+    for item in items:
+        assert q.dequeue() == item
+
+def test_clear_resets_pointers():
+    q = Queue()
+    q.enqueue(1)
+    q.enqueue(2)
+    q.clear()
+    assert q.front is None
+    assert q.back is None
+
+def test_len_after_operations():
+    q = Queue()
+    assert len(q) == 0
+    q.enqueue(1)
+    assert len(q) == 1
+    q.enqueue(2)
+    assert len(q) == 2
+    q.dequeue()
+    assert len(q) == 1
+    q.dequeue()
+    assert len(q) == 0
+
+def test_multiple_clears():
+    q = Queue()
+    q.enqueue(1)
+    q.clear()
+    assert len(q) == 0
+    q.clear()
+    assert len(q) == 0
+    q.enqueue(2)
+    assert len(q) == 1
+    q.clear()
+    assert len(q) == 0
