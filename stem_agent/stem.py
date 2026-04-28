@@ -19,7 +19,8 @@ from .StemRunResult import StemRunResult
 from .IterationRecord import IterationRecord
 from .static import (MAX_ITER, SATURATION_THRESHOLD, PLATEAU_THRESHOLD, 
                     RESEARCH_SYSTEM, GENERATE_SYSTEM,
-                    RESEARCH_USER_TEMPLATE, GENERATE_USER_TEMPLATE, FEEDBACK_BLOCK_TEMPLATE)
+                    RESEARCH_USER_TEMPLATE, GENERATE_USER_TEMPLATE, FEEDBACK_BLOCK_TEMPLATE,
+                    IS_DEMO_MODE, DEMO_FUNCTION, DEMO_FUNCTION_TIER)
 
 from dotenv import load_dotenv
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
@@ -442,13 +443,23 @@ def main():
 
     SKIP_FN = {"apply_discount", "queue1", "can_access_resource", "stack1"}
 
-    for group in ["internal", "external"]:
-        group_dir = benchmark_root / group
-        if not group_dir.is_dir():
-            continue
-        for fn_dir in sorted(group_dir.iterdir()):
-            if fn_dir.is_dir() and fn_dir.name not in SKIP_FN:
-                function_dirs.append(fn_dir)
+    if IS_DEMO_MODE:
+        demo_path = benchmark_root / DEMO_FUNCTION_TIER / DEMO_FUNCTION
+        if not demo_path.is_dir():
+            raise RuntimeError(f"Demo function not found: {demo_path}")
+        function_dirs = [demo_path]
+        n_runs_per_function = 1
+        print(f"[DEMO MODE] Running {DEMO_FUNCTION} (1 run, stem agent)")
+    else:
+        n_runs_per_function = 3
+        for group in ["internal", "external"]:
+            group_dir = benchmark_root / group
+            if not group_dir.is_dir():
+                continue
+            for fn_dir in sorted(group_dir.iterdir()):
+                if fn_dir.is_dir() and fn_dir.name not in SKIP_FN:
+                    function_dirs.append(fn_dir)
+        print(f"[FULL MODE] Running {len(function_dirs)} functions × {n_runs_per_function} runs")
 
     fieldnames = list(StemRunResult.__dataclass_fields__.keys())
     all_results: list[StemRunResult] = []

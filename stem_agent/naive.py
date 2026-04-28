@@ -12,7 +12,7 @@ from typing import Optional
 import yaml
 from openai import OpenAI
 
-from .static import NAIVE_SYSTEM, NAIVE_USER_TEMPLATE, PYTEST_RESULT_RE
+from .static import NAIVE_SYSTEM, NAIVE_USER_TEMPLATE, PYTEST_RESULT_RE, IS_DEMO_MODE, DEMO_FUNCTION, DEMO_FUNCTION_TIER
 from .RunResult import RunResult
 
 from dotenv import load_dotenv
@@ -268,13 +268,23 @@ def main():
     benchmark_root = Path("benchmark")
     function_dirs: list[Path] = []
 
-    for group in ["internal", "external"]:
-        group_dir = benchmark_root / group
-        if not group_dir.is_dir():
-            continue
-        for fn_dir in sorted(group_dir.iterdir()):
-            if fn_dir.is_dir():
-                function_dirs.append(fn_dir)
+    if IS_DEMO_MODE:
+        demo_path = benchmark_root / DEMO_FUNCTION_TIER / DEMO_FUNCTION
+        if not demo_path.is_dir():
+            raise RuntimeError(f"Demo function not found: {demo_path}")
+        function_dirs = [demo_path]
+        n_runs_per_function = 1
+        print(f"[DEMO MODE] Running {DEMO_FUNCTION} (1 run, naive baseline)")
+    else:
+        n_runs_per_function = 5
+        for group in ["internal", "external"]:
+            group_dir = benchmark_root / group
+            if not group_dir.is_dir():
+                continue
+            for fn_dir in sorted(group_dir.iterdir()):
+                if fn_dir.is_dir():
+                    function_dirs.append(fn_dir)
+        print(f"[FULL MODE] Running {len(function_dirs)} functions × {n_runs_per_function} runs")
 
     fieldnames = list(RunResult.__dataclass_fields__.keys())
     all_results: list[RunResult] = []
