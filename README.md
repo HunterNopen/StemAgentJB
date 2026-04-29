@@ -25,9 +25,9 @@ Full write-up: [REPORT.md](./REPORT.md)
 ```bash
 git clone https://github.com/HunterNopen/StemAgentJB
 cd StemAgentJB
-python -m venv .venv && source .venv/Scripts/activate
+python -m venv jb_venv & jb_venv\Scripts\activate
 pip install -r requirements.txt
-echo "OPENAI_API_KEY=sk-..." > .env
+echo OPENAI_API_KEY=sk-... > .env
 ```
 
 ### 3. Run (Demo Mode by Default)
